@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Mi Rincón de Aprendizaje! 🌟 4º</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--yellow:#FFD93D;--orange:#FF6B35;--blue:#4ECDC4;--purple:#9B5DE5;--pink:#F15BB5;--green:#06D6A0;--red:#EF233C;--bg:#FFF9F0;--dark:#2D2D2D}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Nunito',sans-serif;background-color:var(--bg);min-height:100vh;overflow-x:hidden;position:relative}
+    .stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .star{position:absolute;font-size:1.5rem;animation:floatStar linear infinite;opacity:.15}
+    @keyframes floatStar{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:.15}90%{opacity:.15}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+    header{position:relative;z-index:1;text-align:center;padding:3rem 1rem 2rem}
+    .header-badge{display:inline-block;background:var(--yellow);border:4px solid var(--dark);border-radius:50px;padding:.4rem 1.4rem;font-size:.9rem;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem;box-shadow:4px 4px 0 var(--dark)}
+    h1{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,7vw,5rem);color:var(--dark);line-height:1.1;text-shadow:4px 4px 0 var(--orange);margin-bottom:.5rem;animation:bounceIn .8s cubic-bezier(.34,1.56,.64,1)}
+    .subtitle{font-size:1.2rem;color:#666;font-weight:600;margin-bottom:.5rem}
+    .mascot{font-size:4rem;animation:wiggle 2s ease-in-out infinite;display:inline-block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.15))}
+    @keyframes wiggle{0%,100%{transform:rotate(-5deg) scale(1)}50%{transform:rotate(5deg) scale(1.1)}}
+    @keyframes bounceIn{0%{transform:scale(.3) translateY(-50px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}
+    main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:1rem 1.5rem 4rem}
+    .section-title{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--dark);text-align:center;margin-bottom:2rem}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-bottom:3rem}
+    .card{background:#fff;border:4px solid var(--dark);border-radius:24px;padding:2rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;box-shadow:6px 6px 0 var(--dark);position:relative;overflow:hidden;animation:cardSlideIn .6s cubic-bezier(.34,1.56,.64,1) both}
+    .card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.25s}.card:nth-child(3){animation-delay:.4s}.card:nth-child(4){animation-delay:.55s}
+    @keyframes cardSlideIn{0%{transform:translateY(40px) scale(.8);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;border-radius:20px 20px 0 0}
+    .card-silabas::before{background:var(--orange)}
+    .card-demos::before{background:var(--blue)}
+    .card-comp::before{background:var(--pink)}
+    .card-pronto::before{background:var(--green)}
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:10px 14px 0 var(--dark)}
+    .card:active{transform:translateY(-2px) scale(.99);box-shadow:4px 6px 0 var(--dark)}
+    .card-icon{font-size:4.5rem;margin-bottom:1rem;animation:pulse 3s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.1))}
+    .card:nth-child(2) .card-icon{animation-delay:.5s}.card:nth-child(3) .card-icon{animation-delay:1s}.card:nth-child(4) .card-icon{animation-delay:1.5s}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+    .card-tag{display:inline-block;padding:.2rem .8rem;border-radius:50px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:.75rem;border:2px solid var(--dark)}
+    .card-silabas .card-tag{background:#FFE4D0;color:var(--orange)}
+    .card-demos .card-tag{background:#D6F5F2;color:#1f8f88}
+    .card-comp .card-tag{background:#FFE0F3;color:#c2338f}
+    .card-comp:hover .card-btn{background:var(--pink)}
+    .card-pronto .card-tag{background:#D0FFF4;color:#059669}
+    .card-title{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--dark);margin-bottom:.5rem;line-height:1.2}
+    .card-desc{font-size:.95rem;color:#666;font-weight:600;line-height:1.5;margin-bottom:1.2rem}
+    .card-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--dark);color:#fff;padding:.65rem 1.4rem;border-radius:50px;font-size:.95rem;font-weight:800;transition:background .2s}
+    .card-silabas:hover .card-btn{background:var(--orange)}
+    .card-demos:hover .card-btn{background:var(--blue);color:var(--dark)}
+    .card-pronto:hover .card-btn{background:var(--green);color:var(--dark)}
+    .card-pronto{opacity:.7;cursor:default;filter:grayscale(20%)}
+    .card-pronto:hover{transform:none;box-shadow:6px 6px 0 var(--dark)}
+    .fun-bar{background:var(--yellow);border:4px solid var(--dark);border-radius:20px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;box-shadow:5px 5px 0 var(--dark);margin-bottom:2rem}
+    .fun-bar-icon{font-size:2rem;flex-shrink:0}
+    .fun-bar-text{font-size:1rem;font-weight:700;color:var(--dark)}
+    .fun-bar-text span{color:var(--orange)}
+    footer{position:relative;z-index:1;text-align:center;padding:1.5rem;font-size:.85rem;color:#aaa;font-weight:600}
+    footer a{color:var(--purple);font-weight:800}
+    @media (max-width:500px){h1{font-size:2.2rem}.cards-grid{grid-template-columns:1fr;gap:1.5rem}}
+    @media (prefers-reduced-motion:reduce){.star,.mascot,.card-icon{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="stars-bg" id="starsContainer"></div>
+  <header>
+    <div class="header-badge">🎒 4º de Primaria</div>
+    <div class="mascot">🦉</div>
+    <h1>¡Mi Rincón<br>de Aprendizaje!</h1>
+    <p class="subtitle">Elige una actividad y ¡a aprender! 🚀</p>
+  </header>
+  <main>
+    <div class="fun-bar">
+      <div class="fun-bar-icon">💡</div>
+      <div class="fun-bar-text"><span>¡Consejo del día!</span> Practica un poquito cada día y verás cómo mejoras. ¡Tú puedes! ⭐</div>
+    </div>
+    <p class="section-title">📚 Mis Actividades</p>
+    <div class="cards-grid">
+      <a href="silabas-tonicas.html" class="card card-silabas">
+        <span class="card-tag">📖 Lengua</span>
+        <div class="card-icon">🔊</div>
+        <div class="card-title">Sílabas tónicas</div>
+        <p class="card-desc">Escucha las palabras, separa sus sílabas y descubre cuál es la tónica. ¡Agudas, llanas y esdrújulas!</p>
+        <span class="card-btn">¡Jugar ahora! →</span>
+      </a>
+      <a href="demostrativos.html" class="card card-demos">
+        <span class="card-tag">📖 Lengua</span>
+        <div class="card-icon">🧭</div>
+        <div class="card-title">Demostrativos y comparativos</div>
+        <p class="card-desc">Este, ese, aquel… y también más que, menos que, tan como. ¡Señala y compara!</p>
+        <span class="card-btn">¡Jugar ahora! →</span>
+      </a>
+      <a href="compuestas.html" class="card card-comp">
+        <span class="card-tag">📖 Lengua</span>
+        <div class="card-icon">🧩</div>
+        <div class="card-title">Palabras simples y compuestas</div>
+        <p class="card-desc">Descubre qué palabras se forman uniendo otras: sacapuntas, paraguas, girasol…</p>
+        <span class="card-btn">¡Jugar ahora! →</span>
+      </a>
+      <div class="card card-pronto">
+        <span class="card-tag">🔜 Próximamente</span>
+        <div class="card-icon">🎁</div>
+        <div class="card-title">¡Algo nuevo!</div>
+        <p class="card-desc">Pronto tendrás una nueva actividad sorpresa para aprender aún más.</p>
+        <span class="card-btn">En construcción…</span>
+      </div>
+    </div>
+  </main>
+  <footer>Hecho con ❤️ para aprender y divertirse<br><a href="https://frangeta.github.io/page-inital_study-3-grade/">← Ir a 3º de Primaria</a></footer>
+  <script>
+    const emojis=['⭐','🌟','✨','💫','🎈','🌈','🎉','📚','✏️','🔊','🧭','⚖️','🧩'];
+    const container=document.getElementById('starsContainer');
+    for(let i=0;i<20;i++){const el=document.createElement('div');el.className='star';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=Math.random()*100+'%';el.style.animationDuration=(8+Math.random()*12)+'s';el.style.animationDelay=(Math.random()*10)+'s';el.style.fontSize=(1+Math.random()*1.5)+'rem';container.appendChild(el);}
+  </script>
+</body>
+</html>
