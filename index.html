@@ -6,109 +6,224 @@
   <title>¡Mi Rincón de Aprendizaje! 🌟 4º</title>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--yellow:#FFD93D;--orange:#FF6B35;--blue:#4ECDC4;--purple:#9B5DE5;--pink:#F15BB5;--green:#06D6A0;--red:#EF233C;--bg:#FFF9F0;--dark:#2D2D2D}
+    :root{--yellow:#FFD93D;--orange:#FF6B35;--blue:#4ECDC4;--purple:#9B5DE5;--pink:#F15BB5;--green:#06D6A0;--red:#EF233C;--terra:#D4774B;--bg:#FFF9F0;--dark:#2D2D2D}
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Nunito',sans-serif;background-color:var(--bg);min-height:100vh;overflow-x:hidden;position:relative}
+    body{font-family:'Nunito',sans-serif;background-color:var(--bg);min-height:100vh;overflow-x:hidden;position:relative;color:var(--dark)}
     .stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
     .star{position:absolute;font-size:1.5rem;animation:floatStar linear infinite;opacity:.15}
     @keyframes floatStar{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:.15}90%{opacity:.15}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
-    header{position:relative;z-index:1;text-align:center;padding:3rem 1rem 2rem}
-    .header-badge{display:inline-block;background:var(--yellow);border:4px solid var(--dark);border-radius:50px;padding:.4rem 1.4rem;font-size:.9rem;font-weight:800;color:var(--dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem;box-shadow:4px 4px 0 var(--dark)}
-    h1{font-family:'Fredoka One',cursive;font-size:clamp(2.5rem,7vw,5rem);color:var(--dark);line-height:1.1;text-shadow:4px 4px 0 var(--orange);margin-bottom:.5rem;animation:bounceIn .8s cubic-bezier(.34,1.56,.64,1)}
-    .subtitle{font-size:1.2rem;color:#666;font-weight:600;margin-bottom:.5rem}
+    header{position:relative;z-index:1;text-align:center;padding:2.5rem 1rem 1.5rem}
+    .header-badge{display:inline-block;background:var(--yellow);border:4px solid var(--dark);border-radius:50px;padding:.4rem 1.4rem;font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:1rem;box-shadow:4px 4px 0 var(--dark)}
+    h1{font-family:'Fredoka One',cursive;font-weight:400;font-size:clamp(2.3rem,7vw,4.6rem);line-height:1.1;text-shadow:4px 4px 0 var(--orange);margin-bottom:.5rem;animation:bounceIn .8s cubic-bezier(.34,1.56,.64,1)}
+    .subtitle{font-size:1.15rem;color:#666;font-weight:600}
     .mascot{font-size:4rem;animation:wiggle 2s ease-in-out infinite;display:inline-block;filter:drop-shadow(0 8px 16px rgba(0,0,0,.15))}
     @keyframes wiggle{0%,100%{transform:rotate(-5deg) scale(1)}50%{transform:rotate(5deg) scale(1.1)}}
     @keyframes bounceIn{0%{transform:scale(.3) translateY(-50px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}
-    main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:1rem 1.5rem 4rem}
-    .section-title{font-family:'Fredoka One',cursive;font-size:1.8rem;color:var(--dark);text-align:center;margin-bottom:2rem}
-    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-bottom:3rem}
-    .card{background:#fff;border:4px solid var(--dark);border-radius:24px;padding:2rem 1.5rem;text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;box-shadow:6px 6px 0 var(--dark);position:relative;overflow:hidden;animation:cardSlideIn .6s cubic-bezier(.34,1.56,.64,1) both}
-    .card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.25s}.card:nth-child(3){animation-delay:.4s}.card:nth-child(4){animation-delay:.55s}
-    @keyframes cardSlideIn{0%{transform:translateY(40px) scale(.8);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
-    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;border-radius:20px 20px 0 0}
-    .card-silabas::before{background:var(--orange)}
-    .card-demos::before{background:var(--blue)}
-    .card-comp::before{background:var(--pink)}
-    .card-pronto::before{background:var(--green)}
-    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:10px 14px 0 var(--dark)}
-    .card:active{transform:translateY(-2px) scale(.99);box-shadow:4px 6px 0 var(--dark)}
-    .card-icon{font-size:4.5rem;margin-bottom:1rem;animation:pulse 3s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.1))}
-    .card:nth-child(2) .card-icon{animation-delay:.5s}.card:nth-child(3) .card-icon{animation-delay:1s}.card:nth-child(4) .card-icon{animation-delay:1.5s}
-    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
-    .card-tag{display:inline-block;padding:.2rem .8rem;border-radius:50px;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:.75rem;border:2px solid var(--dark)}
-    .card-silabas .card-tag{background:#FFE4D0;color:var(--orange)}
-    .card-demos .card-tag{background:#D6F5F2;color:#1f8f88}
-    .card-comp .card-tag{background:#FFE0F3;color:#c2338f}
-    .card-comp:hover .card-btn{background:var(--pink)}
-    .card-pronto .card-tag{background:#D0FFF4;color:#059669}
-    .card-title{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--dark);margin-bottom:.5rem;line-height:1.2}
-    .card-desc{font-size:.95rem;color:#666;font-weight:600;line-height:1.5;margin-bottom:1.2rem}
-    .card-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--dark);color:#fff;padding:.65rem 1.4rem;border-radius:50px;font-size:.95rem;font-weight:800;transition:background .2s}
-    .card-silabas:hover .card-btn{background:var(--orange)}
-    .card-demos:hover .card-btn{background:var(--blue);color:var(--dark)}
-    .card-pronto:hover .card-btn{background:var(--green);color:var(--dark)}
-    .card-pronto{opacity:.7;cursor:default;filter:grayscale(20%)}
-    .card-pronto:hover{transform:none;box-shadow:6px 6px 0 var(--dark)}
-    .fun-bar{background:var(--yellow);border:4px solid var(--dark);border-radius:20px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;box-shadow:5px 5px 0 var(--dark);margin-bottom:2rem}
+    main{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:.5rem 1.25rem 4rem}
+
+    /* Barra de consejo / progreso */
+    .fun-bar{background:var(--yellow);border:4px solid var(--dark);border-radius:20px;padding:1rem 1.3rem;display:flex;align-items:center;gap:1rem;box-shadow:5px 5px 0 var(--dark);margin-bottom:1.5rem}
     .fun-bar-icon{font-size:2rem;flex-shrink:0}
-    .fun-bar-text{font-size:1rem;font-weight:700;color:var(--dark)}
+    .fun-bar-text{font-size:1rem;font-weight:700}
     .fun-bar-text span{color:var(--orange)}
+
+    /* Seguir con… */
+    .resume{display:flex;align-items:center;gap:1rem;background:#fff;border:4px solid var(--dark);border-radius:20px;padding:.9rem 1.1rem;box-shadow:5px 5px 0 var(--dark);margin-bottom:1.5rem;text-decoration:none;color:var(--dark);transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
+    .resume:hover{transform:translateY(-4px);box-shadow:8px 10px 0 var(--dark)}
+    .resume .ic{font-size:2.6rem;flex:none}
+    .resume .tx{flex:1;min-width:0}
+    .resume small{display:block;font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--purple)}
+    .resume b{font-family:'Fredoka One',cursive;font-weight:400;font-size:1.3rem;display:block;line-height:1.2}
+    .resume .go{background:var(--dark);color:#fff;border-radius:50px;padding:.55rem 1.1rem;font-weight:800;white-space:nowrap}
+
+    /* Buscador y filtros */
+    .toolbar{position:sticky;top:0;z-index:5;background:var(--bg);padding:.75rem 0 .9rem;margin-bottom:.5rem}
+    .search{display:flex;align-items:center;gap:.6rem;background:#fff;border:4px solid var(--dark);border-radius:50px;padding:.55rem 1.1rem;box-shadow:4px 4px 0 var(--dark)}
+    .search input{flex:1;border:0;outline:0;font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:700;background:transparent;color:var(--dark);min-width:0}
+    .search button{border:0;background:#eee;border-radius:50%;width:28px;height:28px;font-weight:800;cursor:pointer;color:#666}
+    .filters{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.8rem}
+    .fchip{font-family:'Nunito',sans-serif;font-weight:800;font-size:.92rem;padding:.45rem 1rem;border:3px solid var(--dark);border-radius:50px;background:#fff;cursor:pointer;box-shadow:3px 3px 0 var(--dark);transition:transform .15s;color:var(--dark)}
+    .fchip:hover{transform:translateY(-2px)}
+    .fchip.on{background:var(--c,var(--yellow));color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.2)}
+    .fchip .n{display:inline-block;min-width:1.4em;padding:0 .35em;margin-left:.3em;border-radius:50px;background:rgba(0,0,0,.08);font-size:.8rem}
+    .fchip.on .n{background:rgba(255,255,255,.3)}
+
+    /* Secciones por asignatura */
+    .subject{margin:1.6rem 0 2.2rem}
+    .subject-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+    .subject-head h2{font-family:'Fredoka One',cursive;font-weight:400;font-size:1.6rem}
+    .subject-head .bar{flex:1;height:4px;border-radius:4px;background:var(--c);opacity:.35}
+    .subject-head .cnt{font-weight:800;font-size:.85rem;color:#888}
+
+    /* Tarjetas */
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem}
+    .card{--c:var(--orange);background:#fff;border:4px solid var(--dark);border-radius:24px;padding:1.5rem 1.25rem 1.3rem;text-decoration:none;color:var(--dark);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;box-shadow:6px 6px 0 var(--dark);position:relative;overflow:hidden;animation:cardSlideIn .5s cubic-bezier(.34,1.56,.64,1) both}
+    @keyframes cardSlideIn{0%{transform:translateY(30px) scale(.9);opacity:0}100%{transform:translateY(0) scale(1);opacity:1}}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--c)}
+    .card:hover{transform:translateY(-6px) scale(1.02);box-shadow:10px 12px 0 var(--dark)}
+    .card:active{transform:translateY(-1px) scale(.99);box-shadow:4px 5px 0 var(--dark)}
+    .card:focus-visible{outline:4px solid var(--purple);outline-offset:4px}
+    .card-icon{font-size:3.8rem;margin-bottom:.6rem;animation:pulse 3s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.1))}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+    .card-tags{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;margin-bottom:.6rem}
+    .card-tag{display:inline-block;padding:.15rem .7rem;border-radius:50px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;border:2px solid var(--dark);background:color-mix(in srgb,var(--c) 18%,#fff);color:color-mix(in srgb,var(--c) 70%,#000)}
+    .card-tag.new{background:var(--red);color:#fff;animation:pulse 1.6s ease-in-out infinite}
+    .card-title{font-family:'Fredoka One',cursive;font-weight:400;font-size:1.45rem;margin-bottom:.4rem;line-height:1.2}
+    .card-desc{font-size:.92rem;color:#666;font-weight:600;line-height:1.45;margin-bottom:.9rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+    .card-prog{font-size:.82rem;font-weight:800;color:#888;margin-bottom:.9rem;background:#F6F6F6;border-radius:50px;padding:.25rem .8rem}
+    .card-prog.has{color:#1f7a55;background:#E3F8EB}
+    .card-btn{margin-top:auto;display:inline-flex;align-items:center;gap:.5rem;background:var(--dark);color:#fff;padding:.6rem 1.3rem;border-radius:50px;font-size:.95rem;font-weight:800;transition:background .2s}
+    .card:hover .card-btn{background:var(--c)}
+
+    .empty{text-align:center;padding:2.5rem 1rem;font-weight:700;color:#888}
+    .empty div{font-size:3rem;margin-bottom:.5rem}
     footer{position:relative;z-index:1;text-align:center;padding:1.5rem;font-size:.85rem;color:#aaa;font-weight:600}
     footer a{color:var(--purple);font-weight:800}
-    @media (max-width:500px){h1{font-size:2.2rem}.cards-grid{grid-template-columns:1fr;gap:1.5rem}}
-    @media (prefers-reduced-motion:reduce){.star,.mascot,.card-icon{animation:none}}
+
+    /* En el móvil, tarjetas en horizontal: caben muchas más sin tanto scroll */
+    @media (max-width:560px){
+      h1{font-size:2.2rem}
+      header{padding:2rem 1rem 1rem}
+      .mascot{font-size:3.2rem}
+      .cards-grid{grid-template-columns:1fr;gap:1rem}
+      .card{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"icon tags" "icon title" "icon desc" "icon prog";column-gap:.9rem;align-items:start;text-align:left;padding:1.1rem 1rem 1rem;border-radius:20px;box-shadow:5px 5px 0 var(--dark)}
+      .card-icon{grid-area:icon;font-size:2.8rem;margin:0;align-self:center}
+      .card-tags{grid-area:tags;justify-content:flex-start;margin-bottom:.3rem}
+      .card-title{grid-area:title;font-size:1.25rem;margin-bottom:.2rem}
+      .card-desc{grid-area:desc;-webkit-line-clamp:2;margin-bottom:.5rem;font-size:.88rem}
+      .card-prog{grid-area:prog;justify-self:start;margin:0}
+      .card-btn{display:none}
+      .resume .go{display:none}
+    }
+    @media (prefers-reduced-motion:reduce){.star,.mascot,.card-icon,.card,.card-tag.new,h1{animation:none}}
   </style>
 </head>
 <body>
-  <div class="stars-bg" id="starsContainer"></div>
+  <div class="stars-bg" id="starsContainer" aria-hidden="true"></div>
   <header>
     <div class="header-badge">🎒 4º de Primaria</div>
     <div class="mascot">🦉</div>
     <h1>¡Mi Rincón<br>de Aprendizaje!</h1>
     <p class="subtitle">Elige una actividad y ¡a aprender! 🚀</p>
   </header>
+
   <main>
-    <div class="fun-bar">
-      <div class="fun-bar-icon">💡</div>
-      <div class="fun-bar-text"><span>¡Consejo del día!</span> Practica un poquito cada día y verás cómo mejoras. ¡Tú puedes! ⭐</div>
+    <div class="fun-bar"><div class="fun-bar-icon" id="funIcon">💡</div><div class="fun-bar-text" id="funText"></div></div>
+    <div id="resume"></div>
+
+    <div class="toolbar">
+      <label class="search"><span aria-hidden="true">🔎</span><input id="q" type="search" placeholder="Busca una actividad…" aria-label="Buscar actividad" autocomplete="off"><button id="clr" hidden aria-label="Borrar búsqueda">✕</button></label>
+      <div class="filters" id="filters" role="tablist" aria-label="Asignaturas"></div>
     </div>
-    <p class="section-title">📚 Mis Actividades</p>
-    <div class="cards-grid">
-      <a href="https://frangeta.github.io/Silabas-tonicas-4-primaria/index.html" class="card card-silabas">
-        <span class="card-tag">📖 Lengua</span>
-        <div class="card-icon">🔊</div>
-        <div class="card-title">Sílabas tónicas</div>
-        <p class="card-desc">Escucha las palabras, separa sus sílabas y descubre cuál es la tónica. ¡Agudas, llanas y esdrújulas!</p>
-        <span class="card-btn">¡Jugar ahora! →</span>
-      </a>
-      <a href="https://frangeta.github.io/demostrativos-y-comparativos-cuarto-primaria/index.html" class="card card-demos">
-        <span class="card-tag">📖 Lengua</span>
-        <div class="card-icon">🧭</div>
-        <div class="card-title">Demostrativos y comparativos</div>
-        <p class="card-desc">Este, ese, aquel… y también más que, menos que, tan como. ¡Señala y compara!</p>
-        <span class="card-btn">¡Jugar ahora! →</span>
-      </a>
-      <a href="https://frangeta.github.io/compound-4-de-primaria/" class="card card-comp">
-        <span class="card-tag">📖 Lengua</span>
-        <div class="card-icon">🧩</div>
-        <div class="card-title">Palabras simples y compuestas</div>
-        <p class="card-desc">Descubre qué palabras se forman uniendo otras: sacapuntas, paraguas, girasol…</p>
-        <span class="card-btn">¡Jugar ahora! →</span>
-      </a>
-      <div class="card card-pronto">
-        <span class="card-tag">🔜 Próximamente</span>
-        <div class="card-icon">🎁</div>
-        <div class="card-title">¡Algo nuevo!</div>
-        <p class="card-desc">Pronto tendrás una nueva actividad sorpresa para aprender aún más.</p>
-        <span class="card-btn">En construcción…</span>
-      </div>
-    </div>
+
+    <div id="list"></div>
   </main>
+
   <footer>Hecho con ❤️ para aprender y divertirse<br><a href="https://frangeta.github.io/page-inital_study-3-grade/">← Ir a 3º de Primaria</a></footer>
+
   <script>
-    const emojis=['⭐','🌟','✨','💫','🎈','🌈','🎉','📚','✏️','🔊','🧭','⚖️','🧩'];
-    const container=document.getElementById('starsContainer');
-    for(let i=0;i<20;i++){const el=document.createElement('div');el.className='star';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=Math.random()*100+'%';el.style.animationDuration=(8+Math.random()*12)+'s';el.style.animationDelay=(Math.random()*10)+'s';el.style.fontSize=(1+Math.random()*1.5)+'rem';container.appendChild(el);}
+    /* =====================================================================
+       ✏️ PARA AÑADIR UNA ACTIVIDAD: copia una línea de ACTIVITIES y cambia
+       los datos. Si la asignatura es nueva, añádela antes en SUBJECTS.
+       - key:   la clave de localStorage de la app (para mostrar su progreso)
+       - added: fecha AAAA-MM-DD; sale la etiqueta «¡Nuevo!» durante 14 días
+       ===================================================================== */
+    const SUBJECTS = {
+      lengua: { name: 'Lengua',         emoji: '📖', color: '#FF6B35' },
+      social: { name: 'Social Science', emoji: '🌍', color: '#D4774B' },
+      // natural: { name: 'Natural Science', emoji: '🔬', color: '#06D6A0' },
+      // mates:   { name: 'Mates',           emoji: '➗', color: '#9B5DE5' },
+      // english: { name: 'English',         emoji: '🇬🇧', color: '#4ECDC4' },
+    };
+
+    const ACTIVITIES = [
+      { subject:'lengua', icon:'🔊', color:'#FF6B35', title:'Sílabas tónicas',
+        desc:'Escucha las palabras, separa sus sílabas y descubre cuál es la tónica. ¡Agudas, llanas y esdrújulas!',
+        url:'https://frangeta.github.io/Silabas-tonicas-4-primaria/index.html', key:'silabas4_v1', tags:'agudas llanas esdrujulas acento' },
+      { subject:'lengua', icon:'🧭', color:'#4ECDC4', title:'Demostrativos y comparativos',
+        desc:'Este, ese, aquel… y también más que, menos que, tan como. ¡Señala y compara!',
+        url:'https://frangeta.github.io/demostrativos-y-comparativos-cuarto-primaria/index.html', key:'demcmp4_v1', tags:'este ese aquel comparar' },
+      { subject:'lengua', icon:'🧩', color:'#F15BB5', title:'Palabras simples y compuestas',
+        desc:'Descubre qué palabras se forman uniendo otras: sacapuntas, paraguas, girasol…',
+        url:'https://frangeta.github.io/compound-4-de-primaria/', key:'compuestas4_v1', tags:'compuestas sacapuntas paraguas' },
+      { subject:'social', icon:'🦴', color:'#D4774B', title:'Prehistory',
+        desc:'Paleolithic, Neolithic y Bronze and Iron Ages: escenas para explorar, mapa de España, tarjetas y retos.',
+        url:'https://frangeta.github.io/prehistory_4_grade/', key:'prehistory4_v2', added:'2026-11-27',
+        tags:'prehistoria paleolitico neolitico metales edad de piedra stone age celtas iberos altamira' },
+    ];
+
+    const TIPS = ['Practica un poquito cada día y verás cómo mejoras. ¡Tú puedes! ⭐','Si fallas una, lee la explicación: ¡así es como se aprende! 🧠','Prueba el botón «Repasar fallos» al terminar un reto. 🎯','¡Intenta batir tu récord en cada actividad! 🏆'];
+
+    /* ---------- utilidades ---------- */
+    const $ = s => document.querySelector(s);
+    const esc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+    const norm = s => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const store = { get(k,d){ try{ const v=localStorage.getItem(k); return v==null?d:JSON.parse(v); }catch(e){ return d; } }, set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} } };
+    const isNew = a => a.added && (Date.now() - new Date(a.added+'T00:00:00')) < 14*864e5;
+    const statsOf = a => { const s = a.key ? store.get(a.key,null) : null; return s && s.tot ? s : null; };
+    const usedSubjects = Object.keys(SUBJECTS).filter(k => ACTIVITIES.some(a => a.subject === k));
+
+    let filter = store.get('hub4_filter','all');
+    if (filter !== 'all' && !usedSubjects.includes(filter)) filter = 'all';
+    let query = '';
+
+    /* ---------- barra superior: consejo o progreso total ---------- */
+    (function funBar(){
+      const all = ACTIVITIES.map(statsOf).filter(Boolean);
+      const tot = all.reduce((n,s)=>n+s.tot,0), ok = all.reduce((n,s)=>n+(s.ok||0),0);
+      if (tot) { $('#funIcon').textContent='🏅'; $('#funText').innerHTML=`<span>¡Llevas ${tot} preguntas respondidas!</span> Has acertado el ${Math.round(100*ok/tot)}%. ${TIPS[Math.floor(Math.random()*TIPS.length)]}`; }
+      else $('#funText').innerHTML = `<span>¡Consejo del día!</span> ${TIPS[0]}`;
+    })();
+
+    /* ---------- seguir con la última actividad ---------- */
+    (function resume(){
+      const last = store.get('hub4_last',null), a = ACTIVITIES.find(x => x.url === last);
+      if (!a) return;
+      $('#resume').innerHTML = `<a class="resume" href="${esc(a.url)}"><span class="ic">${a.icon}</span><span class="tx"><small>▶️ Seguir con…</small><b>${esc(a.title)}</b></span><span class="go">¡Vamos! →</span></a>`;
+    })();
+    document.addEventListener('click', e => { const c = e.target.closest('a[data-url]'); if (c) store.set('hub4_last', c.dataset.url); });
+
+    /* ---------- filtros ---------- */
+    function drawFilters(){
+      const chips = [['all','⭐','Todas','#FFD93D',ACTIVITIES.length], ...usedSubjects.map(k => [k, SUBJECTS[k].emoji, SUBJECTS[k].name, SUBJECTS[k].color, ACTIVITIES.filter(a=>a.subject===k).length])];
+      $('#filters').innerHTML = chips.map(([k,e,n,c,cnt]) => `<button class="fchip${k===filter?' on':''}" role="tab" aria-selected="${k===filter}" data-k="${k}" style="--c:${c}">${e} ${esc(n)}<span class="n">${cnt}</span></button>`).join('');
+      $('#filters').querySelectorAll('.fchip').forEach(b => b.onclick = () => { filter = b.dataset.k; store.set('hub4_filter', filter); drawFilters(); drawList(); });
+    }
+
+    /* ---------- tarjetas ---------- */
+    function card(a, i){
+      const s = statsOf(a), subj = SUBJECTS[a.subject];
+      const prog = s ? `<span class="card-prog has">🏆 Récord ${s.best||0} · ✅ ${Math.round(100*(s.ok||0)/s.tot)}%</span>` : `<span class="card-prog">✨ ¡Aún sin estrenar!</span>`;
+      return `<a href="${esc(a.url)}" data-url="${esc(a.url)}" class="card" style="--c:${a.color||subj.color};animation-delay:${Math.min(i,8)*.07}s">
+        <div class="card-icon" style="animation-delay:${(i%4)*.5}s">${a.icon}</div>
+        <div class="card-tags"><span class="card-tag">${subj.emoji} ${esc(subj.name)}</span>${isNew(a)?'<span class="card-tag new">¡Nuevo!</span>':''}</div>
+        <div class="card-title">${esc(a.title)}</div>
+        <p class="card-desc">${esc(a.desc)}</p>
+        ${prog}
+        <span class="card-btn">¡Jugar ahora! →</span>
+      </a>`;
+    }
+    function drawList(){
+      const q = norm(query.trim());
+      const match = a => (filter==='all' || a.subject===filter) && (!q || norm(a.title+' '+a.desc+' '+(a.tags||'')+' '+SUBJECTS[a.subject].name).includes(q));
+      const groups = usedSubjects.filter(k => filter==='all' || k===filter).map(k => [k, ACTIVITIES.filter(a => a.subject===k && match(a))]).filter(g => g[1].length);
+      if (!groups.length) { $('#list').innerHTML = `<div class="empty"><div>🔍</div>No hay ninguna actividad con «${esc(query)}». ¡Prueba otra palabra!</div>`; return; }
+      let i = 0;
+      $('#list').innerHTML = groups.map(([k, acts]) => { const s = SUBJECTS[k];
+        return `<section class="subject" style="--c:${s.color}"><div class="subject-head"><h2>${s.emoji} ${esc(s.name)}</h2><span class="bar"></span><span class="cnt">${acts.length} ${acts.length===1?'actividad':'actividades'}</span></div>
+          <div class="cards-grid">${acts.map(a => card(a, i++)).join('')}</div></section>`; }).join('');
+    }
+
+    $('#q').addEventListener('input', e => { query = e.target.value; $('#clr').hidden = !query; drawList(); });
+    $('#clr').onclick = () => { query=''; $('#q').value=''; $('#clr').hidden=true; drawList(); $('#q').focus(); };
+    drawFilters(); drawList();
+
+    /* ---------- estrellas de fondo ---------- */
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const emojis = ['⭐','🌟','✨','💫','🎈','🌈','🎉','📚','✏️', ...ACTIVITIES.map(a => a.icon)];
+      const box = $('#starsContainer');
+      for (let i=0;i<18;i++){ const el=document.createElement('div'); el.className='star'; el.textContent=emojis[Math.floor(Math.random()*emojis.length)]; el.style.left=Math.random()*100+'%'; el.style.animationDuration=(8+Math.random()*12)+'s'; el.style.animationDelay=(Math.random()*10)+'s'; el.style.fontSize=(1+Math.random()*1.5)+'rem'; box.appendChild(el); }
+    }
   </script>
 </body>
 </html>
